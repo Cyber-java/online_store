@@ -1,5 +1,11 @@
+import PhonesList from "./components/phonesList";
+
 function App() {
-  return null;
+  return (
+    <>
+      <PhonesList />
+    </>
+  );
 }
 
 export default App;
