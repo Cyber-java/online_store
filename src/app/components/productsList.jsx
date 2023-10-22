@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import api from "../api";
 import Table from "./table";
 
-const PhonesList = () => {
+const ProductsList = () => {
   const [smartphones, setSmartphones] = useState();
   useEffect(() => {
     api.smartphones.fetchAll().then((data) => setSmartphones(data));
@@ -17,6 +17,7 @@ const PhonesList = () => {
     price: { path: "price", name: "цена" },
     currency: { path: "currency", name: "валюта" },
   };
+
   if (smartphones) {
     return (
       <>
@@ -27,4 +28,4 @@ const PhonesList = () => {
   return <h2>Loading...</h2>;
 };
 
-export default PhonesList;
+export default ProductsList;

@@ -1,9 +1,9 @@
-import PhonesList from "./components/phonesList";
+import Products from "./components/products";
 
 function App() {
   return (
     <>
-      <PhonesList />
+      <Products />
     </>
   );
 }
