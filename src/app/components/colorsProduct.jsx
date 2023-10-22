@@ -4,7 +4,10 @@ const ColorsProduct = ({ item }) => {
   return (
     <>
       {item.color.map((iter) => (
-        <span className={"badge m-1 bg-" + iter.color} key={iter._id}>
+        <span
+          className={"badge badge-pill m-1 bg-" + iter.color}
+          key={iter._id}
+        >
           {iter.name}
         </span>
       ))}

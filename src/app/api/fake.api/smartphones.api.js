@@ -1,3 +1,5 @@
+const iconphone = {};
+
 const colors = {
   blue: {
     _id: "67rdca3eeb7f6fgeed471198",
@@ -140,6 +142,14 @@ const fetchAll = () =>
     }, 2000);
   });
 
+const getById = (id) =>
+  new Promise((resolve) => {
+    window.setTimeout(function () {
+      resolve(smartphones.find((phone) => phone.id === id));
+    }, 1000);
+  });
+
 export default {
   fetchAll,
+  getById,
 };
