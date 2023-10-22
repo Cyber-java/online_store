@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Card from "./card";
 import Pagination from "./pagination";
+import { paginate } from "../utils/paginate";
 
 const CardsList = ({ data, onDelete }) => {
   const pageSize = 4;
@@ -10,16 +11,8 @@ const CardsList = ({ data, onDelete }) => {
   const handlePageChange = (pageIndex) => {
     setCurrentPage(pageIndex);
   };
-  const paginate = (items, pageNumber, pageSize) => {
-    const startIndex = (pageNumber - 1) * pageSize;
-    if (items) {
-      return [...items].splice(startIndex, pageSize);
-    } else {
-      return <h1>not items</h1>;
-    }
-  };
+
   const phoneCrop = paginate(data, currentPage, pageSize);
-  console.log(phoneCrop);
 
   return (
     <>
