@@ -1,5 +1,6 @@
 import React from "react";
 import _ from "lodash";
+import PropTypes from "prop-types";
 
 const Pagination = ({ smartphones, pageSize, onPageChange, currentPage }) => {
   const count = smartphones.length;
@@ -42,4 +43,10 @@ const Pagination = ({ smartphones, pageSize, onPageChange, currentPage }) => {
   );
 };
 
+Pagination.propTypes = {
+  smartphones: PropTypes.array.isRequired,
+  pageSize: PropTypes.number.isRequired,
+  onPageChange: PropTypes.func,
+  currentPage: PropTypes.array.isRequired,
+};
 export default Pagination;

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import api from "../api";
 import ColorsProduct from "./colorsProduct";
+import PropTypes from "prop-types";
 
 const CardPage = ({ cardId }) => {
   const history = useHistory();
@@ -17,15 +18,19 @@ const CardPage = ({ cardId }) => {
       <>
         <h2>
           {phone.brand}
-          {phone.title}
+          <span className="m-2">{phone.title}</span>
         </h2>
-        <h2>
-          Цена{phone.price}
-          <span>{phone.currency}</span>
-        </h2>
+        <h4>
+          Цена: {phone.price}
+          <span className="m-2">{phone.currency}</span>
+        </h4>
         <span>
-          <ColorsProduct item={phone} />
+          Цвет <ColorsProduct item={phone} />
         </span>
+        <h4>Размер экрана: {phone.screen_size}</h4>
+        <h4>Частота обонвления: {phone.update_frequency}</h4>
+        <h4>Батарея: {phone.battery_capacity}</h4>
+        <h5>Стандарт связи: {phone.communication_standard}</h5>
         <div>
           <button className="btn btn-sm btn-warning" onClick={handleBackPage}>
             Вернуться в каталог
@@ -38,4 +43,7 @@ const CardPage = ({ cardId }) => {
   }
 };
 
+CardPage.propTypes = {
+  cardId: PropTypes.string.isRequired,
+};
 export default CardPage;

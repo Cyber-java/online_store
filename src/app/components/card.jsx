@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import ColorsProduct from "./colorsProduct";
+import PropTypes from "prop-types";
+
 const Card = ({ onDelete, ...phone }) => {
   return (
     <div className="col-4 mb-2">
@@ -32,5 +34,7 @@ const Card = ({ onDelete, ...phone }) => {
     </div>
   );
 };
-
+Card.propTypes = {
+  onDelete: PropTypes.func.isRequired,
+};
 export default Card;
