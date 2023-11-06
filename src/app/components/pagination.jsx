@@ -47,6 +47,6 @@ Pagination.propTypes = {
   smartphones: PropTypes.array.isRequired,
   pageSize: PropTypes.number.isRequired,
   onPageChange: PropTypes.func,
-  currentPage: PropTypes.array.isRequired,
+  currentPage: PropTypes.number.isRequired,
 };
 export default Pagination;

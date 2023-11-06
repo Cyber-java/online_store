@@ -17,7 +17,7 @@ const CardsList = ({ data, onDelete }) => {
 
   return (
     <>
-      <div className="container m-3">
+      <div className="container m-3 mx-auto">
         <div className="row">
           {phoneCrop.map((phone) => (
             <Card key={phone.id} {...phone} onDelete={onDelete} />
