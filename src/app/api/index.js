@@ -1,3 +1,4 @@
 import smartphones from "./fake.api/smartphones.api";
-const API = { smartphones };
+import resource from "./fake.api/resource.api";
+const API = { smartphones, resource };
 export default API;

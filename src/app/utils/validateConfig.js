@@ -11,4 +11,7 @@ export const validateConfig = {
     isContainDigit: { message: "Пароль должен содержать хотя бы одну цифру" },
     min: { message: "Пароль должен содержать минимум 8 символов", value: 8 },
   },
+  resource: {
+    isRequired: { message: "Это это поможет нам улучшить сервис" },
+  },
 };

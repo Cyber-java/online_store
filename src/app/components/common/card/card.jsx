@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import ColorsProduct from "./colorsProduct";
+import ColorsProduct from "../../ui/colorsProduct";
 import PropTypes from "prop-types";
 
 const Card = ({ onDelete, ...phone }) => {

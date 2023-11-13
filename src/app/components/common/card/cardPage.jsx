@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
-import api from "../api";
-import ColorsProduct from "./colorsProduct";
+import api from "../../../api";
+import ColorsProduct from "../../ui/colorsProduct";
 import PropTypes from "prop-types";
 
 const CardPage = ({ cardId }) => {

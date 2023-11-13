@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import CardsList from "./cardsList";
-import api from "../api";
+import CardsList from "../card/cardsList";
+import api from "../../../api";
 
 const Products = () => {
   const [smartphones, setSmartphones] = useState();
