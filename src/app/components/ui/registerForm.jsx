@@ -4,9 +4,15 @@ import { validator } from "../../utils/validator";
 import { validateConfig } from "../../utils/validateConfig";
 import SelectField from "../common/form/selectField";
 import API from "../../api";
+import RadioField from "../common/form/radioField";
 
 const RegisterForm = () => {
-  const [data, setData] = useState({ email: "", password: "", resource: "" });
+  const [data, setData] = useState({
+    email: "",
+    password: "",
+    resource: "",
+    sex: "male",
+  });
   const [errors, setErrors] = useState({});
   const [resources, setResources] = useState([]);
 
@@ -26,11 +32,23 @@ const RegisterForm = () => {
       setResources(resourcesList);
     });
   }, []);
+  const getProfessionById = (id) => {
+    for (const prof of resources) {
+      if (prof.value === id) {
+        return { _id: prof.value, name: prof.label };
+      }
+    }
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const isValide = validate();
     if (!isValide) return;
-    console.log(data);
+    const { resource } = data;
+    console.log({
+      ...data,
+      profession: getProfessionById(resource),
+    });
   };
 
   const validate = () => {
@@ -67,6 +85,17 @@ const RegisterForm = () => {
           onChange={handleChange}
           defaultOptions="Способ..."
           error={errors.resource}
+        />
+        <RadioField
+          label="Выбереите Ваш пол"
+          name="sex"
+          onChange={handleChange}
+          value={data.sex}
+          options={[
+            { name: "Мужчина", value: "male" },
+            { name: "Женщина", value: "female" },
+            { name: "Другое", value: "other" },
+          ]}
         />
         <button
           className="btn btn-primary mt-4 w-100 wx-auto"
